@@ -1,0 +1,14 @@
+**/polyMesh
+/meshCfmesh
+/output
+**/1
+**/2
+**/3
+**/extendedFeatureEdgeMesh
+*.fms
+processor*
+output
+postProcessing
+__pycache__
+results.csv
+

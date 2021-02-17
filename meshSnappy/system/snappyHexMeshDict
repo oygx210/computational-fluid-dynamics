@@ -1,0 +1,241 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  7.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Which of the steps to run
+castellatedMesh   true;
+snap              true;
+addLayers         true;
+
+geometry
+{
+    rocket.stl
+    {
+        type triSurfaceMesh;
+        name rocket;
+    } 
+    
+    
+wake_coarse
+    {
+    type		    searchableCylinder;
+    point1          (-1.4 0 0);
+    point2          (8 0 0);
+    radius          0.4;
+    }
+
+ogive
+    {
+    type		    searchableCylinder;
+    point1          (-1.1 0 0);
+    point2          (-0.55 0 0);
+    radius          0.15;
+    }
+
+winglet
+    {
+    type		    searchableCylinder;
+    point1          (0.8 0 0);
+    point2          (1.1 0 0);
+    radius          0.075;
+    }
+
+wake_near_1
+    {
+    type		    searchableCylinder;
+    point1          (1.0 0 0);
+    point2          (1.2 0 0);
+    radius          0.06;
+    }
+
+wake_near_2
+    {
+    type		    searchableCylinder;
+    point1          (0.95 0 0);
+    point2          (1.5 0 0);
+    radius          0.1;
+    }
+
+};
+
+castellatedMeshControls
+{
+
+    maxLocalCells 1000000;
+    maxGlobalCells 4000000;
+    minRefinementCells 10;
+    maxLoadUnbalance 0.10;
+    nCellsBetweenLevels 1;
+    
+    features
+    (
+        {
+            file "rocket.eMesh";
+            level 8;
+        }
+    );
+
+    refinementSurfaces
+    {
+        rocket
+        {
+            level (5 8);
+            patchInfo
+            {
+            type wall;
+            }
+        }
+        
+    }
+    resolveFeatureAngle 90;
+
+    refinementRegions
+    {
+	    
+	    
+wake_coarse
+	    {
+		    mode inside;
+		    levels ((2 3));
+	    }
+
+ogive
+	    {
+		    mode inside;
+		    levels ((4 5));
+	    }
+
+winglet
+	    {
+		    mode inside;
+		    levels ((6 7));
+	    }
+
+wake_near_1
+	    {
+		    mode inside;
+		    levels ((7 8));
+	    }
+
+wake_near_2
+	    {
+		    mode inside;
+		    levels ((6 7));
+	    }
+
+    }
+    
+    locationInMesh (0.001 0.1 0.001);
+    allowFreeStandingZoneFaces true;
+}
+
+snapControls
+{
+    nSmoothPatch 3;
+    tolerance 1.2;
+    nSolveIter 185;
+    nRelaxIter 4;
+    nFeatureSnapIter 5;
+    implicitFeatureSnap false;
+    explicitFeatureSnap true;
+    multiRegionFeatureSnap false;
+}
+
+addLayersControls
+{
+    relativeSizes false;
+    layers
+    {
+        rocket 
+        {
+            nSurfaceLayers  10;
+        }
+    }
+
+	firstLayerThickness    1e-06;
+thickness    0.002;
+ 
+
+    minThickness 1e-10;
+    nGrow 0;
+
+    
+    featureAngle 90;
+    slipFeatureAngle 20;
+    nRelaxIter 10;
+
+    // Number of smoothing iterations of surface normals
+    nSmoothSurfaceNormals 20;
+
+    // Number of smoothing iterations of interior mesh movement direction
+    nSmoothNormals 20;
+
+    // Smooth layer thickness over surface patches
+    nSmoothThickness 20;
+
+    // Stop layer growth on highly warped cells
+    maxFaceThicknessRatio 0.5;
+
+    // Reduce layer growth where ratio thickness to medial
+    // distance is large
+    maxThicknessToMedialRatio 0.2;
+
+    // Angle used to pick up medial axis points
+    // Note: changed(corrected) w.r.t 17x! 90 degrees corresponds to 130 in 17x.
+    minMedianAxisAngle 90;
+
+
+    // Create buffer region for new layer terminations
+    nBufferCellsNoExtrude 0;
+
+
+    // Overall max number of layer addition iterations. The mesher will exit
+    // if it reaches this number of iterations; possibly with an illegal
+    // mesh.
+    nLayerIter 100;
+}
+
+// Generic mesh quality settings. At any undoable phase these determine
+// where to undo.
+meshQualityControls
+{
+    #include "meshQualityDict"
+
+
+    // Advanced
+
+    //- Number of error distribution iterations
+    nSmoothScale 100;
+    //- amount to scale back displacement at error points
+    errorReduction 0.75;
+}
+
+
+// Advanced
+
+// Write flags
+writeFlags
+(
+    scalarLevels
+    layerSets
+    layerFields     // write volScalarField for layer coverage
+);
+
+
+// Merge tolerance. Is fraction of overall bounding box of initial mesh.
+// Note: the write tolerance needs to be higher than this.
+mergeTolerance 1e-6;
+
+// ************************************************************************* //

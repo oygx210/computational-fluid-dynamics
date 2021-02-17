@@ -1,0 +1,38 @@
+ $FLTCON
+  BETA = 0.,
+  ALT = 2*0.,
+  NMACH = 2.,
+  MACH = 0.70, 0.60,
+  NALPHA = 8.,
+  ALPHA = -2.5,-1.5,-1.0,-0.1,
+  ALPHA(5) = 0.1,1.0,1.5,2.5,$
+ $REFQ
+  XCG = 1.9,
+  SREF = 0.0177,
+  LREF = 0.15,
+  LATREF = 0.15,$
+ $AXIBOD
+  TNOSE = KARMAN,
+  LNOSE = 0.3,
+  DNOSE = 0.15,
+  LCENTR = 2.5,
+  DCENTR = 0.15,
+  DEXIT = 0.,
+  BASE = .FALSE.,$
+ $FINSET1
+  XLE = 2.5,2.65,
+  NPANEL = 3.,
+  PHIF = 0.,120.,240.,
+  LER = 2*0.003,
+  SSPAN = 0.075,0.225,
+  CHORD = 0.3,0.15,
+  SECTYP = HEX,
+  ZUPPER = 0.005,0.01,
+  LMAXU = 0.02,0.04,
+  LFLATU = 0.96,0.92,$
+DERIV RAD
+DIM M
+DAMP
+SAVE
+NEXT CASE
+

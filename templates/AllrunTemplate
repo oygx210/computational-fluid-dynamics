@@ -1,0 +1,9 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# run the simulation and compute the forces
+$decomposePar$
+$renumberMesh$
+$run$
+$reconstruct$
+rhoPimpleFoam -postProcess -func computeForces

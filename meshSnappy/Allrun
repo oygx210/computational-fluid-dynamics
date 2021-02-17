@@ -1,0 +1,6 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+cartesianMesh 1> logDomainMesh
+snappyHexMesh 1> logMesh
+checkMesh 1> logCheckMesh
