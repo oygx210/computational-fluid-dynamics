@@ -18,6 +18,9 @@ FoamFile
     type            forces;
     libs            ("libforces.so");
     patches         (rocket);
+    
+    outputControl timeStep;
+    outputInterval 100;
 
 
     // Optional entries

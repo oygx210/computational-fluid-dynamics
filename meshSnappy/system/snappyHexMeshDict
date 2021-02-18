@@ -73,8 +73,8 @@ wake_near_2
 castellatedMeshControls
 {
 
-    maxLocalCells 1000000;
-    maxGlobalCells 4000000;
+    maxLocalCells 5000000;
+    maxGlobalCells 7000000;
     minRefinementCells 10;
     maxLoadUnbalance 0.10;
     nCellsBetweenLevels 1;
@@ -164,8 +164,8 @@ addLayersControls
         }
     }
 
-	firstLayerThickness    1e-06;
-thickness    0.002;
+	firstLayerThickness    2e-05;
+thickness    0.0015;
  
 
     minThickness 1e-10;

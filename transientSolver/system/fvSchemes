@@ -31,7 +31,7 @@ gradSchemes
 
 divSchemes
 {
-    default         none;
+    default         Gauss linear;
 
     div(phi,U)      Gauss linearUpwind limited;
 

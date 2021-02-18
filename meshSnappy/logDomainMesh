@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-3bcbaf946ae9
 Exec   : cartesianMesh
-Date   : Feb 17 2021
-Time   : 11:10:38
+Date   : Feb 18 2021
+Time   : 10:11:52
 Host   : "omarkahol"
-PID    : 5083
+PID    : 3984
 I/O    : uncollated
 Case   : /home/omarkahol/SKYWARD/HERMESV1/meshSnappy
 nProcs : 1
@@ -181,7 +181,7 @@ Renumbering the mesh
 Finished renumbering the mesh
 Renaming boundary patches
 Finished renaming boundary patches
-ExecutionTime = 5.61 s
-ClockTime = 5 s
+ExecutionTime = 2.92 s
+ClockTime = 2 s
 End
 

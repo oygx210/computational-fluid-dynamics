@@ -42,7 +42,6 @@ if config.recomputeMesh:
 			print("mesh files written")
 		os.system('./meshCfmesh/Allrun')
 		setupMesh(path, 0)
-		os.system('./transientSolver/ChangeDictionary')
 	else:
 		if not setupSnappyhexmesh(path, config.snappyConfiguration):
 			raise "Unable to write snappyHexMesh dict"
@@ -51,7 +50,6 @@ if config.recomputeMesh:
 		os.system('./meshSnappy/Allclean')
 		os.system('./meshSnappy/Allrun')
 		setupMesh(path, 1)
-		os.system('./transientSolver/ChangeDictionary')
 
 else:
 	pass

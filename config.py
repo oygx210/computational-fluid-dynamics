@@ -49,8 +49,8 @@ snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(5,8) #rocket feat
 snappyConfiguration.boundaryLayers = 10  #define number of boundary layers
 
 snappyConfiguration.boundaryControl = snappy.boundaryControl() #add a boundary control
-snappyConfiguration.boundaryControl.setFirstLayerThickness(1.0e-6)
-snappyConfiguration.boundaryControl.setTotalThickness(2e-3)
+snappyConfiguration.boundaryControl.setFirstLayerThickness(2.0e-5)
+snappyConfiguration.boundaryControl.setTotalThickness(1.5e-3)
 
 snappyConfiguration.refinementZones = [
 	snappy.snappyRefinement("wake_coarse", snappy.refinementLevel(2,3), point(-1.4, 0, 0), point(8,0,0), 0.4),	
