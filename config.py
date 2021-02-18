@@ -45,7 +45,7 @@ cfmeshConfiguration.refinementZones = [
 #-------------------------------------------------SNAPPY HEX MESH CONFIGURATION-----------------------------------------------------------------------------------------------------
 snappyConfiguration = snappy.snappyConfiguration()
 snappyConfiguration.featureExtractLevel = 8  #refinement precision for feature extraction
-snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(5,8) #rocket feature refinement level, specify min and max level
+snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(5,7) #rocket feature refinement level, specify min and max level
 snappyConfiguration.boundaryLayers = 10  #define number of boundary layers
 
 snappyConfiguration.boundaryControl = snappy.boundaryControl() #add a boundary control
@@ -53,12 +53,14 @@ snappyConfiguration.boundaryControl.setFirstLayerThickness(2.0e-5)
 snappyConfiguration.boundaryControl.setTotalThickness(1.5e-3)
 
 snappyConfiguration.refinementZones = [
-	snappy.snappyRefinement("wake_coarse", snappy.refinementLevel(2,3), point(-1.4, 0, 0), point(8,0,0), 0.4),	
+	snappy.snappyRefinement("wake_coarse", snappy.refinementLevel(2,3), point(-1.4, 0, 0), point(8,0,0), 0.4),
 	snappy.snappyRefinement("ogive", snappy.refinementLevel(4,5), point(-1.1, 0, 0), point(-0.55,0,0), 0.15),
-	
-	snappy.snappyRefinement("winglet",     snappy.refinementLevel(6,7), point(0.8, 0, 0), point(1.1,0,0), 0.075),
-	snappy.snappyRefinement("wake_near_1", snappy.refinementLevel(7,8), point(1.0, 0, 0), point(1.2,0,0), 0.06),
-	snappy.snappyRefinement("wake_near_2", snappy.refinementLevel(6,7), point(0.95, 0, 0), point(1.5,0,0), 0.1)
+
+	snappy.snappyRefinement("winglet",     snappy.refinementLevel(6,7), point(0.85, 0, 0), point(1.05,0,0), 0.15),
+
+	snappy.snappyRefinement("wake_near_1", snappy.refinementLevel(6,7), point(1.0, 0, 0), point(1.2,0,0), 0.075),
+	snappy.snappyRefinement("wake_near_2", snappy.refinementLevel(5,6), point(0.95, 0, 0), point(1.5,0,0), 0.1),
+	snappy.snappyRefinement("wake_near_3", snappy.refinementLevel(4,5), point(0.8, 0, 0), point(2.5,0,0), 0.15)
 ]
 # -------------------------------------------------------------------------------
 
@@ -76,7 +78,7 @@ dynamicMeshConfiguration.maxCells = 4000000
 # -------------------------------------------------------------------------------
 
 #-------------------------------------------------SIMULATIONS--------------------------------------------------------------------------------------------
-numberOfProcessors = 4
+numberOfProcessors = 2
 renumberMesh = False
 
 numberOfSimulations = 1 #set to zero to deactivate
