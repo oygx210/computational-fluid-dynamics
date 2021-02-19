@@ -41,18 +41,11 @@ solvers
 
 PIMPLE
 {
-   nNonOrthogonalCorrectors 1;
-   pMinFactor      0.1;
-   pMaxFactor      2;
-   transonic       yes;
-   consistent      yes;
-   residualControl
-   {
-       p               1e-5;
-       U               1e-6;
-       e               1e-5;
-       "(k|epsilon|nuTilda|omega)" 1e-5;
-   }
+    nOuterCorrectors 1;
+    nCorrectors      1;
+    nNonOrthogonalCorrectors 1;
+
+    transonic            yes;
 }
 
 

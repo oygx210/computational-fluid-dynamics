@@ -8,9 +8,9 @@
 Build  : 7-3bcbaf946ae9
 Exec   : checkMesh
 Date   : Feb 18 2021
-Time   : 10:26:10
+Time   : 22:30:29
 Host   : "omarkahol"
-PID    : 5267
+PID    : 4175
 I/O    : uncollated
 Case   : /home/omarkahol/SKYWARD/HERMESV1/meshSnappy
 nProcs : 1
@@ -26,34 +26,35 @@ Create polyMesh for time = 1
 Time = 1
 
 Mesh stats
-    points:           3000701
-    faces:            8672294
-    internal faces:   8593348
-    cells:            2836314
-    faces per cell:   6.08735
+    points:           1755760
+    faces:            5042799
+    internal faces:   4995546
+    cells:            1644378
+    faces per cell:   6.10465
     boundary patches: 4
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     2752673
+    hexahedra:     1583428
     prisms:        88
     wedges:        0
     pyramids:      220
     tet wedges:    0
     tetrahedra:    88
-    polyhedra:     83245
+    polyhedra:     60554
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            6   18983
-            8   220
-            9   45990
-           10   10
-           11   3
-           12   17524
-           13   1
-           15   514
+            6   15372
+            8   443
+            9   32656
+           10   62
+           11   45
+           12   11504
+           13   13
+           14   12
+           15   447
 
 Checking topology...
     Boundary definition OK.
@@ -68,21 +69,21 @@ Checking patch topology for multiply connected surfaces...
                    inlet      174      181  ok (non-closed singly connected)
                   outlet      483      526  ok (non-closed singly connected)
                    walls     1840     1880  ok (non-closed singly connected)
-                  rocket    76449    76935      ok (closed singly connected)
+                  rocket    44756    45941      ok (closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-3 -1.99592 -1.99972) (8 1.99591 1.99484)
+    Overall domain bounding box (-3 -1.99592 -1.99975) (8 1.99591 1.99484)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (-3.3273e-17 -7.82842e-17 -3.10498e-16) OK.
-    Max cell openness = 3.20826e-16 OK.
+    Boundary openness (-3.6128e-17 -2.13371e-17 -1.15857e-16) OK.
+    Max cell openness = 3.23956e-16 OK.
     Max aspect ratio = 5.61036 OK.
     Minimum face area = 1.37592e-06. Maximum face area = 0.139661.  Face area magnitudes OK.
-    Min volume = 1.61916e-09. Max volume = 0.029761.  Total volume = 137.297.  Cell volumes OK.
-    Mesh non-orthogonality Max: 54.5853 average: 4.91288
+    Min volume = 1.61969e-09. Max volume = 0.029761.  Total volume = 137.297.  Cell volumes OK.
+    Mesh non-orthogonality Max: 54.5853 average: 5.37355
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 1.00115 OK.
+    Max skewness = 1.00172 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.
@@ -90,37 +91,37 @@ Mesh OK.
 Time = 2
 
 Mesh stats
-    points:           2989620
-    faces:            8660139
-    internal faces:   8593348
-    cells:            2836314
-    faces per cell:   6.08307
+    points:           1745934
+    faces:            5031777
+    internal faces:   4995546
+    cells:            1644378
+    faces per cell:   6.09794
     boundary patches: 4
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     2741642
-    prisms:        9655
+    hexahedra:     1573943
+    prisms:        7879
     wedges:        0
     pyramids:      220
-    tet wedges:    32
+    tet wedges:    113
     tetrahedra:    88
-    polyhedra:     84677
+    polyhedra:     62135
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            4   690
-            5   766
-            6   18981
-            7   238
-            8   39
-            9   45922
-           10   2
-           11   1
-           12   17524
-           14   1
-           15   513
+            4   684
+            5   927
+            6   15362
+            7   457
+            8   73
+            9   32613
+           10   14
+           11   32
+           12   11514
+           14   22
+           15   437
 
 Checking topology...
     Boundary definition OK.
@@ -135,21 +136,21 @@ Checking patch topology for multiply connected surfaces...
                    inlet      174      181  ok (non-closed singly connected)
                   outlet      483      526  ok (non-closed singly connected)
                    walls     1840     1880  ok (non-closed singly connected)
-                  rocket    64294    65854      ok (closed singly connected)
+                  rocket    33734    36115      ok (closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-3 -1.99592 -1.99972) (8 1.99591 1.99484)
+    Overall domain bounding box (-3 -1.99592 -1.99975) (8 1.99591 1.99484)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (-1.19446e-17 1.2624e-17 2.03998e-16) OK.
-    Max cell openness = 3.07568e-16 OK.
+    Boundary openness (-8.95316e-18 2.36381e-17 2.58395e-16) OK.
+    Max cell openness = 3.05897e-16 OK.
     Max aspect ratio = 5.61034 OK.
-    Minimum face area = 3.38602e-07. Maximum face area = 0.139661.  Face area magnitudes OK.
-    Min volume = 3.25782e-10. Max volume = 0.029763.  Total volume = 137.298.  Cell volumes OK.
-    Mesh non-orthogonality Max: 54.5853 average: 4.99986
+    Minimum face area = 2.61928e-07. Maximum face area = 0.139661.  Face area magnitudes OK.
+    Min volume = 3.25614e-10. Max volume = 0.029763.  Total volume = 137.298.  Cell volumes OK.
+    Mesh non-orthogonality Max: 54.5853 average: 5.49728
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 2.93447 OK.
+    Max skewness = 2.77661 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.
@@ -157,37 +158,37 @@ Mesh OK.
 Time = 3
 
 Mesh stats
-    points:           3648160
-    faces:            10604459
-    internal faces:   10537668
-    cells:            3479254
-    faces per cell:   6.07663
+    points:           2107084
+    faces:            6067487
+    internal faces:   6031256
+    cells:            1981718
+    faces per cell:   6.10518
     boundary patches: 4
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     3361962
-    prisms:        9655
+    hexahedra:     1876373
+    prisms:        7879
     wedges:        0
     pyramids:      220
-    tet wedges:    32
+    tet wedges:    113
     tetrahedra:    88
-    polyhedra:     107297
+    polyhedra:     97045
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            4   690
-            5   786
-            6   19121
-            7   14548
-            8   7809
-            9   46272
-           10   32
-           11   1
-           12   17524
-           14   1
-           15   513
+            4   684
+            5   947
+            6   15542
+            7   24017
+            8   10223
+            9   33073
+           10   554
+           11   32
+           12   11514
+           14   22
+           15   437
 
 Checking topology...
     Boundary definition OK.
@@ -202,24 +203,24 @@ Checking patch topology for multiply connected surfaces...
                    inlet      174      181  ok (non-closed singly connected)
                   outlet      483      526  ok (non-closed singly connected)
                    walls     1840     1880  ok (non-closed singly connected)
-                  rocket    64294    65854      ok (closed singly connected)
+                  rocket    33734    36115      ok (closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-3 -1.99592 -1.99972) (8 1.99591 1.99484)
+    Overall domain bounding box (-3 -1.99592 -1.99975) (8 1.99591 1.99484)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (-3.95511e-17 -2.78358e-17 3.1659e-16) OK.
-    Max cell openness = 2.09825e-14 OK.
-    Max aspect ratio = 469.364 OK.
-    Minimum face area = 3.41862e-09. Maximum face area = 0.139663.  Face area magnitudes OK.
-    Min volume = 5.07001e-12. Max volume = 0.0297695.  Total volume = 137.298.  Cell volumes OK.
-    Mesh non-orthogonality Max: 81.2512 average: 5.78714
-   *Number of severely non-orthogonal (> 70 degrees) faces: 123.
+    Boundary openness (-3.90009e-17 -7.87428e-17 1.88386e-16) OK.
+    Max cell openness = 2.39196e-14 OK.
+    Max aspect ratio = 469.375 OK.
+    Minimum face area = 3.41964e-09. Maximum face area = 0.139663.  Face area magnitudes OK.
+    Min volume = 4.16556e-12. Max volume = 0.0297692.  Total volume = 137.298.  Cell volumes OK.
+    Mesh non-orthogonality Max: 81.1435 average: 6.85168
+   *Number of severely non-orthogonal (> 70 degrees) faces: 111.
     Non-orthogonality check OK.
-  <<Writing 123 non-orthogonal faces to set nonOrthoFaces
+  <<Writing 111 non-orthogonal faces to set nonOrthoFaces
  ***Error in face pyramids: 2 faces are incorrectly oriented.
   <<Writing 2 faces with incorrect orientation to set wrongOrientedFaces
-    Max skewness = 2.82429 OK.
+    Max skewness = 2.71185 OK.
     Coupled point location match (average 0) OK.
 
 Failed 1 mesh checks.

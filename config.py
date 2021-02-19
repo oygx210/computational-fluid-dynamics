@@ -78,7 +78,7 @@ dynamicMeshConfiguration.maxCells = 4000000
 # -------------------------------------------------------------------------------
 
 #-------------------------------------------------SIMULATIONS--------------------------------------------------------------------------------------------
-numberOfProcessors = 2
+numberOfProcessors = 4
 renumberMesh = False
 
 numberOfSimulations = 1 #set to zero to deactivate

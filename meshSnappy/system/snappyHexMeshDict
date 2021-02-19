@@ -47,9 +47,9 @@ ogive
 winglet
     {
     type		    searchableCylinder;
-    point1          (0.8 0 0);
-    point2          (1.1 0 0);
-    radius          0.075;
+    point1          (0.85 0 0);
+    point2          (1.05 0 0);
+    radius          0.15;
     }
 
 wake_near_1
@@ -57,7 +57,7 @@ wake_near_1
     type		    searchableCylinder;
     point1          (1.0 0 0);
     point2          (1.2 0 0);
-    radius          0.06;
+    radius          0.075;
     }
 
 wake_near_2
@@ -66,6 +66,14 @@ wake_near_2
     point1          (0.95 0 0);
     point2          (1.5 0 0);
     radius          0.1;
+    }
+
+wake_near_3
+    {
+    type		    searchableCylinder;
+    point1          (0.8 0 0);
+    point2          (2.5 0 0);
+    radius          0.15;
     }
 
 };
@@ -91,7 +99,7 @@ castellatedMeshControls
     {
         rocket
         {
-            level (5 8);
+            level (5 7);
             patchInfo
             {
             type wall;
@@ -126,13 +134,19 @@ winglet
 wake_near_1
 	    {
 		    mode inside;
-		    levels ((7 8));
+		    levels ((6 7));
 	    }
 
 wake_near_2
 	    {
 		    mode inside;
-		    levels ((6 7));
+		    levels ((5 6));
+	    }
+
+wake_near_3
+	    {
+		    mode inside;
+		    levels ((4 5));
 	    }
 
     }
