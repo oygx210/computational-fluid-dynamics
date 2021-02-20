@@ -11,4 +11,4 @@ output
 postProcessing
 __pycache__
 results.csv
-
+venv/
