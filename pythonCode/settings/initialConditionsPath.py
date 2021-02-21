@@ -1,2 +1,3 @@
 templatePath = "templates/initialConditionsTemplate"
-filePath = "transientSolver/0/initialConditions"
+filePathTransient = "transientSolver/0/initialConditions"
+filePathSteady = "steadySolver/0/initialConditions"

@@ -14,11 +14,11 @@ def rotateVelocity(vel, alfa, beta):
     alfa, beta = np.radians([alfa, beta])
     return vel * np.array([cos(alfa) * cos(beta), sin(beta), sin(alfa) * cos(beta)])
 
-def setupInitialConditions(workingPath,alfa, beta, mach, altitude):
+def setupInitialConditions(workingPath,alfa, beta, mach, altitude, transient):
 
     #PATHS
     templatePath = os.path.join(workingPath, settings.templatePath)
-    filePath = os.path.join(workingPath, settings.filePath)
+    filePath = os.path.join(workingPath, settings.filePathTransient if transient else settings.filePathSteady)
 
     #ATMOSPHERIC MODEL
     atm = Atmosphere(altitude)
