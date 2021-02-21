@@ -2,7 +2,6 @@ __author__ = "Omar Kahol"
 __email__ = "omar.kahol@skywarder.eu"
 __description__ = "aerodynamic routine"
 
-from pythonCode.parsers.forceParser import parser
 from pythonCode.turbulenceModel import turbulenceCalculator
 import pythonCode.settings.openFoamConventions as hermes
 from ambiance import Atmosphere

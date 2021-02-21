@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
-__description__ = "setup loop for the useable cores"
-__version__ = "4.0"
+__email__ = "omar.kahol@skywarder.eu"
+__description__ = "setup loop for the usable cores"
 
 import pythonCode.settings.simulationCoresPath as settings
 import os

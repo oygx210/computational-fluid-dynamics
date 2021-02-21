@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
+__email__ = "omar.kahol@skywarder.eu"
 __description__ = "setup loop for polymesh folder"
-__version__ = "4.0"
 
 import pythonCode.settings.polyMeshPaths as settings
 import os

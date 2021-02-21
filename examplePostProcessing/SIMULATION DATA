@@ -1,0 +1,61 @@
+----------------------------------------------------
+INITIAL CONDITIONS
+----------------------------------------------------
+SIMULATION SETUP
+
+MACH:     0.7000 [-]
+ALTITUDE:  4000.0000 [m]
+ANGLE OF ATTACK:    10.0000 [°]
+ANGLE OF SIDESLIP:   -10.0000 [°]
+U_INF =   227.2121 [m/s]
+----------------------------------------------------
+ATMOSPHERIC DATA
+
+TEMPERATURE:   262.1664 [K]
+PRESSURE: 61660.4226 [m]
+SPEED OF SOUND:   324.5887 [m/s]
+----------------------------------------------------
+TURBULENCE PROPERTIES
+
+Reynolds number: 25245790.2200 [-]
+turbulent length scale:     0.1400 [m]
+turbulent intensity:     0.0190 [%]
+k:    27.9671 [J]
+w:    68.9660 [J]
+epsilon:   173.5898 [J]
+nut:     0.7404 [m^2/s]
+nuTilda:     0.1481 [m^2/s]
+----------------------------------------------------
+AERODYNAMIC DATA
+computed using the last iteration of the solver
+----------------------------------------------------
+FORCES
+
+FX:
+    total:   119.4854 [N]
+    viscous:    52.3967 [N]
+    pressure:    67.0886 [N]
+FY: 
+    total:     0.4631 [N]
+    viscous:     0.4595 [N]
+    pressure:     0.0036 [N]
+FZ: 
+    total:     1.6491 [N]
+    viscous:     0.0332 [N]
+    pressure:     1.6159 [N]
+----------------------------------------------------
+TORQUES (with respect to (0,0,0))
+
+TX:
+    total:     0.0148 [N]
+    viscous:     0.0001 [N]
+    pressure:     0.0146 [N]
+TY: 
+    total:    -0.9234 [N]
+    viscous:    -0.0404 [N]
+    pressure:    -0.8830 [N]
+TZ: 
+    total:     0.2746 [N]
+    viscous:     0.0022 [N]
+    pressure:     0.2724 [N]
+----------------------------------------------------

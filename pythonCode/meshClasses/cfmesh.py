@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
-__description__ = "cfmesh utilities"
-__version__ = "4.0"
+__email__ = "omar.kahol@skywarder.eu"
+__description__ = "cfmesh classes"
 
 class cfmeshRefinement:
 	def __init__(self, name, cellSize, point0, point1, radius0, radius1):

@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
+__email__ = "omar.kahol@skywarder.eu"
 __description__ = "setup loop for cfmesh"
-__version__ = "4.0"
 
 import pythonCode.settings.cfmeshPaths as settings
 import os

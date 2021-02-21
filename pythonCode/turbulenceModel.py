@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
+__email__ = "omar.kahol@skywarder.eu"
 __description__ = "turbulence calculator"
-__version__ = "4.0"
 
 from math import *
 

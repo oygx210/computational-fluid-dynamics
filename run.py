@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
+__email__ = "omar.kahol@skywarder.eu"
 __description__ = "simulation run"
-__version__ = "4.0"
 
 try:
     import config as config
@@ -23,6 +22,10 @@ folder = os.path.join(path, directoryName)
 
 try:
     os.mkdir(folder)
+    os.mkdir(os.path.join(folder,"PLOTS"))
+    os.mkdir(os.path.join(folder, "PLOTS/FORCES"))
+    os.mkdir(os.path.join(folder, "PLOTS/RESIDUALS"))
+    os.mkdir(os.path.join(folder,"CSV"))
 except Exception as e:
     pass
 
@@ -75,6 +78,11 @@ setupAllRun(path, config.numberOfProcessors, config.renumberMesh,transient)
 setupDecomposePar(path, config.numberOfProcessors,transient)
 setupInitialConditions(path, config.alfa, config.beta, config.mach, config.alt, transient)
 
+if config.automaticRun:
+    if transient:
+        os.system('./transientSolver/Allrun')
+    else:
+        os.system('./steadySolver/Allrun')
 
 if config.doPostProcessing:
     setupPostProcessing(path,config.simulationName,transient, config.mach, config.alt, config.alfa, config.beta)

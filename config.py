@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
 __email__ = "omar.kahol@skywarder.eu"
 __description__ = "simulation setup"
-__version__ = "4.0"
 
 #imports
 import pythonCode.meshClasses.cfmesh as cfmesh

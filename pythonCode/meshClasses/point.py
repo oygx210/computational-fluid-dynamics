@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
-__description__ = "simple point class implementation"
-__version__ = "4.0"
+__email__ = "omar.kahol@skywarder.eu"
+__description__ = "representation of a point"
 
 class point:
 	def __init__(self, x, y, z):

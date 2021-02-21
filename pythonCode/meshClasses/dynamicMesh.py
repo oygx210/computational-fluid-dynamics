@@ -1,7 +1,6 @@
 __author__ = "Omar Kahol"
-__email__ = "omar.kahol@skywarder.eu, omar.kahol@mail.polimi.it"
-__description__ = "dynamic mesh parameters"
-__version__ = "4.0"
+__email__ = "omar.kahol@skywarder.eu"
+__description__ = "dynamic mesh configuration"
 
 
 class dynamicMeshConfiguration:
