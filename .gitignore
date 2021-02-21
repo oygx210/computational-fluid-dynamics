@@ -12,4 +12,5 @@ postProcessing
 __pycache__
 results.csv
 venv/
-.idea
+.idea/
+initialConditions
