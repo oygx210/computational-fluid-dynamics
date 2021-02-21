@@ -1,5 +1,9 @@
-allrunFile = "transientSolver/Allrun"
+#ALL RUN PATHS
+allrunFileTransient = "transientSolver/Allrun"
+allrunFileSteady = "steadySolver/Allrun"
 allrunTemplate = "templates/AllrunTemplate"
 
-decomposeParFile = "transientSolver/system/decomposeParDict"
+#DECOMPOSE PAR PATH
+decomposeParFileTransient = "transientSolver/system/decomposeParDict"
+decomposeParFileSteady = "steadySolver/system/decomposeParDict"
 decomposeParTemplate = "templates/decomposeParTemplate"

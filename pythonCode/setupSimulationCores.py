@@ -6,9 +6,9 @@ __version__ = "4.0"
 import pythonCode.settings.simulationCoresPath as settings
 import os
 
-def setupDecomposePar(workingPath, procs):
+def setupDecomposePar(workingPath, procs, transient):
     templatePath = os.path.join(workingPath, settings.decomposeParTemplate)
-    filePath = os.path.join(workingPath, settings.decomposeParFile)
+    filePath = os.path.join(workingPath, settings.decomposeParFileTransient if transient else settings.decomposeParFileSteady)
 
     if procs > 1:
         with open(templatePath, 'r') as f:
@@ -26,19 +26,21 @@ def setupDecomposePar(workingPath, procs):
             pass
     return True
 
-def setupAllRun(workingPath, procs, renumber):
+def setupAllRun(workingPath, procs, renumber, transient):
     templatePath = os.path.join(workingPath, settings.allrunTemplate)
-    filePath = os.path.join(workingPath, settings.allrunFile)
+    filePath = os.path.join(workingPath, settings.allrunFileTransient if transient else settings.allrunFileSteady)
 
     with open(templatePath, 'r') as f:
         dumpStr = f.read()
 
-    parallelRun = "mpirun -np {0} --oversubscribe {1} -parallel"
+    solver = "rhoPimpleFoam" if transient else "rhoSimpleFoam"
+    runCommand = "mpirun -np {0} --oversubscribe {1} -parallel".format(procs, solver) if procs > 1 else solver
+
+    renumberCommand = "mpirun -np {0} --oversubscribe renumberMesh -parallel".format(procs) if procs>1 and renumber else ""
 
     dumpStr = dumpStr.replace("$decomposePar$", "decomposePar -force" if procs>1 else "")
-    dumpStr = dumpStr.replace("$renumberMesh$", parallelRun.format(procs,"renumberMesh") if procs > 1 and renumber else "")
-    dumpStr = dumpStr.replace("$run$", parallelRun.format(procs, "rhoPimpleFoam") if procs > 1 else "rhoPimpleFoam")
-    dumpStr = dumpStr.replace("$reconstruct$", "reconstructPar" if procs > 1 else "")
+    dumpStr = dumpStr.replace("$renumberMesh$", renumberCommand)
+    dumpStr = dumpStr.replace("$run$", runCommand)
 
 
     with open(filePath, 'w') as f:

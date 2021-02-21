@@ -19,7 +19,7 @@ FoamFile
 //  decomposers.
 //singleProcessorFaceSets ((AMI -1));
 
-numberOfSubdomains 2;
+numberOfSubdomains 4;
 
 method          scotch;
 

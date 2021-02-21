@@ -1,7 +1,0 @@
-#!/bin/sh
-cd ${0%/*} || exit 1    # Run from this directory
-
-rm -r processor*
-rm -r postProcessing
-rm -r output
-rm -r 0.*

@@ -10,7 +10,7 @@ from pythonCode.meshClasses.point import point
 import pythonCode.meshClasses.dynamicMesh as dynamicMesh
 
 #simulation batch name
-simulationName = "debug"
+simulationName = "simulazione0.7"
 
 # --------------------------------------------------------------------------------------------
 # MESHING PART
@@ -18,7 +18,7 @@ simulationName = "debug"
 # Note, not all meshing can be done automatically. Please setup the template files properly
 # --------------------------------------------------------------------------------------------
 
-recomputeMesh = True #set to True if you want to recompute the mesh
+recomputeMesh = False #set to True if you want to recompute the mesh
 meshToUse = "snappy" #set it to cfmesh or snappy
 
 #-------------------------------------------------CFMESH CONFIGURATION-------------------------------------------------------------------------------------------------------------
@@ -78,11 +78,16 @@ dynamicMeshConfiguration.maxCells = 4000000
 # -------------------------------------------------------------------------------
 
 #-------------------------------------------------SIMULATIONS--------------------------------------------------------------------------------------------
-numberOfProcessors = 4
-renumberMesh = False
+numberOfProcessors = 10
+renumberMesh = True
 
-numberOfSimulations = 1 #set to zero to deactivate
-alfa = 0
-beta = 0
+type = "transient" #set to steady or transient
+automaticRun = False #if true will run automatically the allrun script
+doPostProcessing = True
+
+alfa = 10
+beta = -10
 mach = 0.70
-alt = 0.0
+alt = 4000.0
+
+
