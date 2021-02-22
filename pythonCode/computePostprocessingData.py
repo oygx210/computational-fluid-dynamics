@@ -16,11 +16,11 @@ FX:
     total: {:10.4f} [N]
     viscous: {:10.4f} [N]
     pressure: {:10.4f} [N]
-FY: 
+FY:
     total: {:10.4f} [N]
     viscous: {:10.4f} [N]
     pressure: {:10.4f} [N]
-FZ: 
+FZ:
     total: {:10.4f} [N]
     viscous: {:10.4f} [N]
     pressure: {:10.4f} [N]
@@ -28,17 +28,17 @@ FZ:
 TORQUES (with respect to (0,0,0))
 
 TX:
-    total: {:10.4f} [N]
-    viscous: {:10.4f} [N]
-    pressure: {:10.4f} [N]
-TY: 
-    total: {:10.4f} [N]
-    viscous: {:10.4f} [N]
-    pressure: {:10.4f} [N]
-TZ: 
-    total: {:10.4f} [N]
-    viscous: {:10.4f} [N]
-    pressure: {:10.4f} [N]
+    total: {:10.4f} [Nm]
+    viscous: {:10.4f} [Nm]
+    pressure: {:10.4f} [Nm]
+TY:
+    total: {:10.4f} [Nm]
+    viscous: {:10.4f} [Nm]
+    pressure: {:10.4f} [Nm]
+TZ:
+    total: {:10.4f} [Nm]
+    viscous: {:10.4f} [Nm]
+    pressure: {:10.4f} [Nm]
 ----------------------------------------------------
 '''
 
@@ -91,7 +91,3 @@ def getString(alt, mach, alfa, beta, forcesAndTorques):
                                                        txp+txv, txv, txp, tyv+typ, tyv, typ, tzv+tzp, tzv, tzp)
 
     return  returnInitialConditionString, returnAerodynamicString
-
-
-
-
