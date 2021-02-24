@@ -11,7 +11,7 @@ import os
 
 def rotateVelocity(vel, alfa, beta):
     alfa, beta = np.radians([alfa, beta])
-    return vel * np.array([cos(alfa) * cos(beta), sin(beta), sin(alfa) * cos(beta)])
+    return vel * np.array([cos(alfa) * cos(beta), sin(alfa), sin(beta) * cos(alfa)])
 
 def setupInitialConditions(workingPath,alfa, beta, mach, altitude, transient):
 

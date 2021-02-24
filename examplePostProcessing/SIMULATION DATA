@@ -4,58 +4,109 @@ INITIAL CONDITIONS
 SIMULATION SETUP
 
 MACH:     0.7000 [-]
-ALTITUDE:  4000.0000 [m]
-ANGLE OF ATTACK:    10.0000 [°]
-ANGLE OF SIDESLIP:   -10.0000 [°]
-U_INF =   227.2121 [m/s]
+ALTITUDE:     0.0000 [m]
+ANGLE OF ATTACK:     0.0000 [°]
+ANGLE OF SIDESLIP:     0.0000 [°]
+U_INF =   238.2058 [m/s]
 ----------------------------------------------------
 ATMOSPHERIC DATA
 
-TEMPERATURE:   262.1664 [K]
-PRESSURE: 61660.4226 [m]
-SPEED OF SOUND:   324.5887 [m/s]
+TEMPERATURE:   288.1500 [K]
+PRESSURE: 101325.0000 [m]
+DENSITY:     1.2250 [kg/m^3]
+SPEED OF SOUND:   340.2940 [m/s]
 ----------------------------------------------------
 TURBULENCE PROPERTIES
 
-Reynolds number: 25245790.2200 [-]
+Reynolds number: 26467310.1798 [-]
 turbulent length scale:     0.1400 [m]
-turbulent intensity:     0.0190 [%]
-k:    27.9671 [J]
-w:    68.9660 [J]
-epsilon:   173.5898 [J]
-nut:     0.7404 [m^2/s]
-nuTilda:     0.1481 [m^2/s]
+turbulent intensity:     0.0189 [%]
+k:    30.3779 [J]
+w:    71.8771 [J]
+epsilon:   196.5131 [J]
+nut:     0.7716 [m^2/s]
+nuTilda:     0.1543 [m^2/s]
 ----------------------------------------------------
 AERODYNAMIC DATA
 computed using the last iteration of the solver
 ----------------------------------------------------
-FORCES
+FORCES 
 
 FX:
     total:   119.4854 [N]
     viscous:    52.3967 [N]
     pressure:    67.0886 [N]
-FY: 
+FY:
     total:     0.4631 [N]
     viscous:     0.4595 [N]
     pressure:     0.0036 [N]
-FZ: 
+FZ:
     total:     1.6491 [N]
     viscous:     0.0332 [N]
     pressure:     1.6159 [N]
-----------------------------------------------------
-TORQUES (with respect to (0,0,0))
 
-TX:
-    total:     0.0148 [N]
-    viscous:     0.0001 [N]
-    pressure:     0.0146 [N]
-TY: 
-    total:    -0.9234 [N]
-    viscous:    -0.0404 [N]
-    pressure:    -0.8830 [N]
-TZ: 
-    total:     0.2746 [N]
-    viscous:     0.0022 [N]
-    pressure:     0.2724 [N]
+FORCES IN THE WIND FRAME
+
+D:   119.4854 [N]
+L:     0.4631 [N]
+S:     1.6491 [N]
+
+COEFFICIENTS (adimensionalized by the frontal surface)
+
+CD:     0.5404 [-]
+CL:     0.0021 [-]
+CS:     0.0075 [-]
+----------------------------------------------------
+TORQUES CONVENTION
+
+Rolling Moment:
+    A positive rolling moment tends to rotate 
+    the rocket in the postive direction 
+    identified by the first body axis.
+    This axis goes from the end to the tip.
+
+Yawing Moment:
+    A positive yawing moment tends to rotate 
+    the tip of the rocket towards the
+    observer. This is equivalent to a positive
+    rotation along the lift axis.
+
+Pitching Moment:
+    A positive pitching moment will increase the
+    angle of attack.
+
+All torques are adimensionalized by the rocket length.
+----------------------------------------------------
+TORQUES in (0,0,0)
+
+Rolling Moment:
+    total:    -0.0148 [Nm]
+    viscous:    -0.0001 [Nm]
+    pressure:    -0.0146 [Nm]
+Yawing Moment:
+    total:    -0.9234 [Nm]
+    viscous:    -0.0404 [Nm]
+    pressure:    -0.8830 [Nm]
+Pitching Moment:
+    total:    -0.2746 [Nm]
+    viscous:    -0.0022 [Nm]
+    pressure:    -0.2724 [Nm]
+----------------------------------------------------
+TORQUES AT THE ROCKET TIP 
+
+Yawing Moment:
+    value:    -2.5634 [Nm]
+    coefficient:    -0.0058 [-]
+Pitching Moment:
+    value:     0.1860 [Nm]
+    coefficient:     0.0004 [Nm]
+----------------------------------------------------
+TORQUES AT THE ROCKET C.G. 
+
+Yawing Moment:
+    value:    -0.5845 [Nm]
+    coefficient:    -0.0013 [-]
+Pitching Moment:
+    value:    -0.3697 [Nm]
+    coefficient:    -0.0008 [Nm]
 ----------------------------------------------------

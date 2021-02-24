@@ -84,9 +84,9 @@ type = "transient" #set to steady or transient
 automaticRun = False #if true will run automatically the allrun script
 doPostProcessing = True
 
-alfa = 10
-beta = -10
+alfa = 0
+beta = 0
 mach = 0.70
-alt = 4000.0
+alt = 0.0
 
 
