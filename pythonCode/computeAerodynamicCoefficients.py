@@ -16,7 +16,7 @@ def computeCoefficients(FX,FY,FZ,TX,TY,TZ,qd, alfa, beta):
                             [sin(alfa),cos(alfa),0],
                             [sin(beta)*cos(alfa), -sin(alfa)*sin(beta),cos(beta)]])
 #FORCES IN THE WIND FRAME
-    D, L, S = R_body_wind.dot(np.array([FX,FY,FZ]))
+    D, L, S = R_body_wind.T.dot(np.array([FX,FY,FZ]))
 
 #COEFFICIENTS IN THE WIND FRAME
     Cd, Cl, Cs = np.array([FX,FY,FZ]) / (qd*Surface)

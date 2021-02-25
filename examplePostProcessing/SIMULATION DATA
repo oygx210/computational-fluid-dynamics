@@ -99,7 +99,7 @@ Yawing Moment:
     coefficient:    -0.0058 [-]
 Pitching Moment:
     value:     0.1860 [Nm]
-    coefficient:     0.0004 [Nm]
+    coefficient:     0.0004 [-]
 ----------------------------------------------------
 TORQUES AT THE ROCKET C.G. 
 
@@ -108,5 +108,5 @@ Yawing Moment:
     coefficient:    -0.0013 [-]
 Pitching Moment:
     value:    -0.3697 [Nm]
-    coefficient:    -0.0008 [Nm]
+    coefficient:    -0.0008 [-]
 ----------------------------------------------------
