@@ -14,28 +14,30 @@ from pythonCode.setupPolyMesh import setupMesh
 from pythonCode.setupInitialConditions import setupInitialConditions
 from pythonCode.setupSimulationCores import setupAllRun, setupDecomposePar
 from pythonCode.setupPostProcessing import setupPostProcessing
+import argparse
 
-# CREATE SIMULATION FOLDER
+# ARGUMENT PARSER
+parser = argparse.ArgumentParser()
+parser.add_argument("-m", "--mesh", action="store_true",
+                    help="compute the mesh")
+parser.add_argument("-s", "--simulationSetup", action="store_true",
+                    help="setup the simulation files")
+parser.add_argument("-r", "--run", action="store_true",
+                    help="run the simulation")
+parser.add_argument("-p", "--postProcessing", action="store_true",
+                    help="proceed with postProcessing")
+args = parser.parse_args()
+
+# SOME IMPORTANT PARAMETERS MUST BE CALCULATED AT THE BEGINNING
+transient = config.type[0].upper() == 'T'
 path = os.getcwd()
 directoryName = config.simulationName
 folder = os.path.join(path, directoryName)
 
-try:
-    os.mkdir(folder)
-    os.mkdir(os.path.join(folder,"PLOTS"))
-    os.mkdir(os.path.join(folder, "PLOTS/FORCES"))
-    os.mkdir(os.path.join(folder, "PLOTS/RESIDUALS"))
-    os.mkdir(os.path.join(folder,"CSV"))
-except Exception as e:
-    pass
-
 # ------------------------------------------------------------------------------------------------------
 # MESH SETUP
 # -----------------------------------------------------------------------------------------------------+
-transient = config.type[0].upper() == 'T'
-
-if config.recomputeMesh:
-
+if args.mesh:
     if config.meshToUse[0].upper() == 'C':
         os.system('./meshCfmesh/Allclean')
 
@@ -58,31 +60,42 @@ if config.recomputeMesh:
 else:
     pass
 
-print("SUCCESFULLY SETUP MESH")
-
-# ------------------------------------------------------------------------------------------------------
-# DYNAMIC MESHING
-# -----------------------------------------------------------------------------------------------------+
-if config.activateDynamicMesh:
-    if not setupDynamicMesh(path, config.dynamicMeshConfiguration):
-        raise "Unable to setup dynamic mesh"
+# -------------------------------------------------------------------------------------------------------
+# SIMULATION SETUP
+# -------------------------------------------------------------------------------------------------------
+if args.simulationSetup:
+    if config.activateDynamicMesh:
+        if not setupDynamicMesh(path, config.dynamicMeshConfiguration):
+            raise "Unable to setup dynamic mesh"
+        else:
+            print("dynamic dictionary written")
     else:
-        print("dynamic dictionary written")
-else:
-    removeDynamicMesh(path)
+        removeDynamicMesh(path)
+    setupAllRun(path, config.numberOfProcessors, config.renumberMesh,transient)
+    setupDecomposePar(path, config.numberOfProcessors,transient)
+    setupInitialConditions(path, config.alfa, config.beta, config.mach, config.alt, transient)
 
 # -------------------------------------------------------------------------------------------------------
-# SIMULATION
-# ------------------------------------------------------------------------------------------------------
-setupAllRun(path, config.numberOfProcessors, config.renumberMesh,transient)
-setupDecomposePar(path, config.numberOfProcessors,transient)
-setupInitialConditions(path, config.alfa, config.beta, config.mach, config.alt, transient)
-
-if config.automaticRun:
+# SIMULATION RUN
+# -------------------------------------------------------------------------------------------------------
+if args.run:
     if transient:
         os.system('./transientSolver/Allrun')
     else:
         os.system('./steadySolver/Allrun')
 
-if config.doPostProcessing:
+# -------------------------------------------------------------------------------------------------------
+# POSTPROCESSING
+# -------------------------------------------------------------------------------------------------------
+if args.postProcessing:
+    #CREATE SIMULATION FOLDER
+    try:
+        os.mkdir(folder)
+        os.mkdir(os.path.join(folder, "PLOTS"))
+        os.mkdir(os.path.join(folder, "PLOTS/FORCES"))
+        os.mkdir(os.path.join(folder, "PLOTS/RESIDUALS"))
+        os.mkdir(os.path.join(folder, "CSV"))
+    except Exception as e:
+        pass
+    #FILL IT WITH POST PROCESSING DATA
     setupPostProcessing(path,config.simulationName,transient, config.mach, config.alt, config.alfa, config.beta)

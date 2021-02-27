@@ -1,41 +1,71 @@
-# HERMES V1 FLOW SIMULATION
+# OPENFOAM ROCKET SIMULATION 
 Automatic compressible flow simulation setup and run for HERMES V1 rocket, developed by Skyward Experimental Rocketry.
 
 # REQUIREMENTS
-To run this simulation openfoam, cfmesh and python are required. You can compile cfmesh by following this link https://openfoamwiki.net/index.php/Extend-bazaar/utilities/cfMesh 
-NOTE => CURRENTLY cfmesh does not work with openfoam 8
+To run this simulation openfoam, cfmesh and python are required. 
+You can compile cfmesh by following this link https://openfoamwiki.net/index.php/Extend-bazaar/utilities/cfMesh 
 
-# PART ONE MESH GENERATION
-In the geometry folder you will find the ROCKET.STEP file which constains the geometry of the rocket and for .stl files which define the boundaries of the domain. These file are useful ONLY if you want to use the cfmesh utility to generate a mesh. If you want to use another software, you only need to ROCKET.STEP file. The mesh should then be converted to an OpenFOAM format. If you are planning to use cfmesh just follow the steps
+To install the python requirements you have to run the following command
 
-STEP ZERO (already done)
+`python3 -m pip  install -r requirements.txt`
 
-With a CAD software modify the ROCKET.STEP file to create a suitable simulation domain. You will have to save all the boundaries of that domain (like the inlet, outlet, walls and the rocket) into different .stl files. This can be easily achieved using salome https://www.code-aster.org/V2/spip.php?article303
+# SETUP
+In order to be able to use this code you must create the geometry domain file. 
 
-STEP ONE (already done)
+To do this, go the meshSnappy/geo folder and execute the following command
 
-From the geo folder, run "./stlCombine" to combine the 4 .stl files into a single geometry.stl file
+`surfaceFeatureEdges geometry.stl geometry.fms`
 
-STEP TWO
+This command will translate the domain .stl domain file into an .fms 
+file that can be read by cfmesh.
 
-From the geo folder, run "surfaceFeatureEdges geometry.stl geometry.fms" to convert the stl file into an fms file
+# DOCUMENTATION
+This repository provides the user with a python environment 
+that will facilitate the correct setup of an openfoam simulation. 
+This is by no means a replacement of openfoam setup files, rather 
+a collection of routine that will automate part of the workload required
+to correctly setup and run a parallel simulation. 
 
-STEP THREE
+The parameters of the simulation can be modified in the **config.py** file. 
 
-From the main folder, run "cartesianMesh" to create a mesh. The mesh parameters can be found and changed in the system/meshDict file. You can read this guide for some references http://cfmesh.com/wp-content/uploads/2015/09/User_Guide-cfMesh_v1.1.pdf
+The python programm consits of two preprocessors, one processor and a postprocessor.
+The preprocessors are used to compute the domain mesh and setup the simulation files, 
+the processor will run the simulation and the 
+postprocessor will read the solution files and produce relevant data.
 
-STEP FOUR
+Each module can be accessed running the **run.py** file. The correct 
+workflow consists of 
+1) Modifying the openfoam parameters that cannot be accessed by the **config.py** 
+file. These files can be found inside the solver folder or in the templates folder.
 
-From the main folder, run "changeDictionary" to update the boundaries. This command will just assign the correct physical type to each boundary in the constant/polyMesh/boundary file
+2) Setting up the **config.py** with the desired parameters
 
-# PART TWO SIMULATION SETUP AND RUN
-There are three main ways to run this simulation
+3) running the executable with the following command `python3 run.py ARGS`
 
-1) From the main folder, run "rhoSimpleFoam" to run the simulation once
-2) From the main folder, run "./Allrun". 
-    NOTE ==> This file will run a simulation in parallel, please modify it properly before running it.
-3) Use the run.py script 
-    NOTE ==> This file allows you to automate the process. Since it uses the Allrun bash script, modify that file properly. 
+Each submodule can be accessed by calling **run.py** with the correct argument.
+More modules can be run in the same call by adding more than one argument
 
+#### MESH PREPROCESSOR
+This module can be accessed by `python3 run.py -m`
 
+It will compute the mesh and copy the mesh data in the solver folder 
 
+#### SIMULATION PREPROCESSOR
+This module can be accessed by `python3 run.py -s`
+
+This submodule will setup the correct initial conditions, bash script files 
+and decomposePar dictionaries.
+
+#### RUN
+This module can be accessed by `python3 run.py -r`
+
+This command will run the simulation by calling the correct openfoam solver.
+
+This command is equivalent to `./transientSolver/Allrun` or 
+`./steadySolver/Allrun`
+
+#### POSTPROCESSING
+This module can be accessed by `python3 run.py -p`
+
+This command will call the postProcessor and create a folder (simulation name)
+with the relevant post-processing data.
