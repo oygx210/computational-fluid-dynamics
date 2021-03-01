@@ -11,6 +11,13 @@ import pythonCode.settings.postProcessingPaths as settings
 import pythonCode.plotters.plotAndSave as plt
 import os
 
+def returnFolderName(path,transient):
+    searchPath = os.path.join(path,"{0}/postProcessing/computeForces".format(
+        "transientSolver" if transient else "steadySolver"
+    ))
+    return os.listdir(searchPath)[0]
+
+
 def setupPostProcessing(path, targetFolder, transient, mach, alt, alfa, beta):
 
 #---------------------------------------------------------------------------------------
@@ -28,7 +35,8 @@ def setupPostProcessing(path, targetFolder, transient, mach, alt, alfa, beta):
 #---------------------------------------------------------------------------------------
 # MAIN FILE
 #---------------------------------------------------------------------------------------
-    forcesFile = os.path.join(path, settings.forcesTransient if transient else settings.forcesSteady)
+    dirName = returnFolderName(path,transient)
+    forcesFile = os.path.join(path, settings.forcesTransient.format(dirName) if transient else settings.forcesSteady.format(dirName))
     targetFolder = os.path.join(path, targetFolder)
     forcesAndTorques = forceParser.parser(forcesFile)
 
@@ -63,7 +71,7 @@ def setupPostProcessing(path, targetFolder, transient, mach, alt, alfa, beta):
 
 
     varNames, residuals = \
-        residualParser.parser(os.path.join(path,settings.residualsTransient if transient else settings.residualsSteady))
+        residualParser.parser(os.path.join(path,settings.residualsTransient.format(dirName) if transient else settings.residualsSteady.format(dirName)))
 
     titleStr = "RESIDUAL OF {0}"
     saveStr = "plot_{0}_residual.png"
