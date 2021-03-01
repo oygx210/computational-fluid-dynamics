@@ -71,7 +71,7 @@ def setupPostProcessing(path, targetFolder, transient, mach, alt, alfa, beta):
 
 
     varNames, residuals = \
-        residualParser.parser(os.path.join(path,settings.residualsTransient.format(dirName) if transient else settings.residualsSteady.format(dirName)))
+    residualParser.parser(os.path.join(path,settings.residualsTransient.format(dirName) if transient else settings.residualsSteady.format(dirName)))
 
     titleStr = "RESIDUAL OF {0}"
     saveStr = "plot_{0}_residual.png"

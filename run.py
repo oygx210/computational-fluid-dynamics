@@ -99,3 +99,4 @@ if args.postProcessing:
         pass
     #FILL IT WITH POST PROCESSING DATA
     setupPostProcessing(path,config.simulationName,transient, config.mach, config.alt, config.alfa, config.beta)
+
