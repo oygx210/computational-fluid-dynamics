@@ -1,0 +1,40 @@
+#!/bin/bash 
+# how to run it: ./stlCombine [PATH TO DIRECTORY WITH .stl FILES] [PATH TO OUTPUT DIRECTORY] 
+
+# get .stl files location/path specified with running script
+#filePath=$(cd $1 && pwd)
+filePath=$(cd . && pwd)  
+# get merged file output location/path specified with running script
+#outputPath=$(cd $2 && pwd)
+outputPath=$(cd . && pwd)  
+
+# check if file geometry.stl exists. If it does delete it. 
+if [ -f $filesPath/geometry.stl ] 
+then 
+    rm $filesPath/geometry.stl 
+fi 
+
+# remove all temporary files from input directory (where .stl files are located) 
+if [ -d "$filePath/*~" ]; then 
+    rm $filePath/*~ 
+fi 
+
+# add patch name: 
+  # change first and last line of every file in input location from solid to solid [.stl FILE NAME] and from endsolid to endsolid [.stl FILE NAME]
+  # merge them together
+for file in $filePath/*.stl 
+do 
+    # get .stl file name
+    fileName=`basename $file` 
+    # remove .stl file extension
+    patchName=`echo "$fileName" | cut -f1 -d'.'` 
+    
+    # append line solid [.stl FILE NAME] (eg. solid Bottom ) to file geometry.stl
+    echo "solid $patchName" >> $outputPath/geometry.stl
+    
+    # copy all lines except first and last one from loaded .stl file and append them to geometry.stl
+    tail -n +2 $file | head -n -1 >> $outputPath/geometry.stl 
+    
+    # append line endsolid [.stl FILE NAME] (eg. endsolid Bottom ) to file geometry.stl
+    echo "endsolid $patchName" >> $outputPath/geometry.stl 
+done

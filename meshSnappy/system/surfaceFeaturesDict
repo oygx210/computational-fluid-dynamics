@@ -16,9 +16,8 @@ FoamFile
 
 surfaces
 (
-    "ogive.stl"
-    "body.stl"
-    "winglets.stl"
+    "NOaero.stl"
+    "FULLaerob.stl"
     "rocket.stl"
 );
 
