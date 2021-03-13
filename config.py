@@ -75,14 +75,12 @@ dynamicMeshConfiguration.maxCells = 4000000
 # -------------------------------------------------------------------------------
 
 #-------------------------------------------------SIMULATIONS--------------------------------------------------------------------------------------------
-numberOfProcessors = 10
+numberOfProcessors = 8
 renumberMesh = True
 
-type = "transient" #set to steady or transient
+type = "steady" #set to steady or transient
 
 alfa = 0
 beta = 0
-mach = 0.70
+mach = 0.30
 alt = 0.0
-
-

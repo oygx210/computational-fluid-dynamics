@@ -4,5 +4,5 @@ cd ${0%/*} || exit 1    # Run from this directory
 # run the simulation and compute the forces
 changeDictionary
 decomposePar -force
-
-mpirun -np 4 --oversubscribe rhoSimpleFoam -parallel
+mpirun -np 8 --oversubscribe renumberMesh -parallel
+mpirun -np 8 --oversubscribe rhoSimpleFoam -parallel

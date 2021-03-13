@@ -25,8 +25,8 @@ geometry
     {
         type triSurfaceMesh;
         name rocket;
-    } 
-    
+    }
+
     $refinementZones$
 };
 
@@ -38,7 +38,7 @@ castellatedMeshControls
     minRefinementCells 10;
     maxLoadUnbalance 0.10;
     nCellsBetweenLevels 1;
-    
+
     features
     (
         {
@@ -57,16 +57,16 @@ castellatedMeshControls
             type wall;
             }
         }
-        
+
     }
     resolveFeatureAngle 90;
 
     refinementRegions
     {
-	    
+
 	    $refinementLevels$
     }
-    
+
     locationInMesh (0.001 0.1 0.001);
     allowFreeStandingZoneFaces true;
 }
@@ -88,18 +88,18 @@ addLayersControls
     relativeSizes false;
     layers
     {
-        rocket 
+        rocket
         {
             nSurfaceLayers  $numLayers$;
         }
     }
 
-	$boundaryControls$ 
+	$boundaryControls$
 
     minThickness 1e-10;
     nGrow 0;
 
-    
+
     featureAngle 90;
     slipFeatureAngle 20;
     nRelaxIter 10;
