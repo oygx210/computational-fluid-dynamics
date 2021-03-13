@@ -8,9 +8,9 @@
 Build  : 7
 Exec   : checkMesh
 Date   : Mar 13 2021
-Time   : 11:49:53
+Time   : 12:50:10
 Host   : "lucamignozzi-ROG-Zephyrus-G14-GA401IV-GA401IV"
-PID    : 13138
+PID    : 22932
 I/O    : uncollated
 Case   : /home/lucamignozzi/Desktop/Skyward/computational-fluid-dynamics/meshSnappy
 nProcs : 1
@@ -26,36 +26,36 @@ Create polyMesh for time = 1
 Time = 1
 
 Mesh stats
-    points:           1430144
-    faces:            3952945
-    internal faces:   3832264
-    cells:            1262177
-    faces per cell:   6.16808
+    points:           6097343
+    faces:            17395838
+    internal faces:   17067611
+    cells:            5650650
+    faces per cell:   6.09902
     boundary patches: 4
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     1190656
-    prisms:        96
+    hexahedra:     5465832
+    prisms:        118
     wedges:        0
-    pyramids:      240
+    pyramids:      295
     tet wedges:    0
-    tetrahedra:    96
-    polyhedra:     71089
+    tetrahedra:    118
+    polyhedra:     184287
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            6   18435
-            8   225
-            9   34835
-           11   94
-           12   16731
-           13   12
-           14   38
-           15   717
-           17   1
-           18   1
+            6   46301
+            8   404
+            9   90001
+           10   50
+           11   162
+           12   45945
+           13   25
+           14   65
+           15   1332
+           18   2
 
 Checking topology...
     Boundary definition OK.
@@ -67,24 +67,24 @@ Checking topology...
 
 Checking patch topology for multiply connected surfaces...
                    Patch    Faces   Points                  Surface topology
-                   inlet      119      125  ok (non-closed singly connected)
-                  outlet      119      125  ok (non-closed singly connected)
-                   walls     1338     1356  ok (non-closed singly connected)
-                  rocket   119105   120307      ok (closed singly connected)
+                   inlet      310      326  ok (non-closed singly connected)
+                  outlet      304      321  ok (non-closed singly connected)
+                   walls     3985     4025  ok (non-closed singly connected)
+                  rocket   323628   325824      ok (closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-3 -2.99802 -3.00156) (13 2.99708 2.99239)
+    Overall domain bounding box (-3 -2.994 -3.00006) (13 2.9941 2.99233)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (4.32781e-18 4.22196e-17 5.71991e-17) OK.
-    Max cell openness = 4.65104e-16 OK.
-    Max aspect ratio = 7.9007 OK.
-    Minimum face area = 3.8298e-06. Maximum face area = 0.410512.  Face area magnitudes OK.
-    Min volume = 7.52613e-09. Max volume = 0.174605.  Total volume = 448.739.  Cell volumes OK.
-    Mesh non-orthogonality Max: 48.962 average: 6.8168
+    Boundary openness (7.83628e-17 3.67276e-16 -8.92986e-17) OK.
+    Max cell openness = 3.0889e-16 OK.
+    Max aspect ratio = 6.98142 OK.
+    Minimum face area = 1.37007e-06. Maximum face area = 0.13072.  Face area magnitudes OK.
+    Min volume = 1.60545e-09. Max volume = 0.0322813.  Total volume = 450.127.  Cell volumes OK.
+    Mesh non-orthogonality Max: 49.7042 average: 5.24554
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 1.0038 OK.
+    Max skewness = 1.00826 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.
@@ -92,38 +92,38 @@ Mesh OK.
 Time = 2
 
 Mesh stats
-    points:           1396825
-    faces:            3918010
-    internal faces:   3832264
-    cells:            1262177
-    faces per cell:   6.1404
+    points:           6007291
+    faces:            17301810
+    internal faces:   17067611
+    cells:            5650650
+    faces per cell:   6.08238
     boundary patches: 4
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     1157905
-    prisms:        30166
+    hexahedra:     5377601
+    prisms:        81949
     wedges:        0
-    pyramids:      240
-    tet wedges:    92
-    tetrahedra:    97
-    polyhedra:     73677
+    pyramids:      295
+    tet wedges:    175
+    tetrahedra:    122
+    polyhedra:     190508
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            4   1156
-            5   1752
-            6   18152
-            7   168
-            8   200
-            9   34684
-           10   64
-           11   35
-           12   16715
-           13   1
-           14   38
-           15   712
+            4   3056
+            5   4070
+            6   45463
+            7   404
+            8   624
+            9   89410
+           10   123
+           11   71
+           12   45904
+           14   65
+           15   1316
+           18   2
 
 Checking topology...
     Boundary definition OK.
@@ -135,65 +135,63 @@ Checking topology...
 
 Checking patch topology for multiply connected surfaces...
                    Patch    Faces   Points                  Surface topology
-                   inlet      119      125  ok (non-closed singly connected)
-                  outlet      119      125  ok (non-closed singly connected)
-                   walls     1338     1356  ok (non-closed singly connected)
-                  rocket    84170    86988      ok (closed singly connected)
+                   inlet      310      326  ok (non-closed singly connected)
+                  outlet      304      321  ok (non-closed singly connected)
+                   walls     3985     4025  ok (non-closed singly connected)
+                  rocket   229600   235772      ok (closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-3 -2.99802 -3.00156) (13 2.99708 2.99239)
+    Overall domain bounding box (-3 -2.994 -3.00006) (13 2.9941 2.99233)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (5.51867e-17 1.07838e-16 2.43386e-16) OK.
-    Max cell openness = 5.48157e-16 OK.
-    Max aspect ratio = 7.9007 OK.
-    Minimum face area = 2.03176e-07. Maximum face area = 0.410512.  Face area magnitudes OK.
-    Min volume = 1.26372e-09. Max volume = 0.174605.  Total volume = 448.739.  Cell volumes OK.
-    Mesh non-orthogonality Max: 57.5539 average: 7.14994
+    Boundary openness (4.27914e-17 3.64119e-16 -1.05759e-16) OK.
+    Max cell openness = 3.85453e-16 OK.
+    Max aspect ratio = 6.98142 OK.
+    Minimum face area = 2.10302e-07. Maximum face area = 0.13072.  Face area magnitudes OK.
+    Min volume = 2.25729e-10. Max volume = 0.0322813.  Total volume = 450.127.  Cell volumes OK.
+    Mesh non-orthogonality Max: 55.7652 average: 5.50945
     Non-orthogonality check OK.
- ***Error in face pyramids: 1 faces are incorrectly oriented.
-  <<Writing 1 faces with incorrect orientation to set wrongOrientedFaces
- ***Max skewness = 4.26641, 1 highly skew faces detected which may impair the quality of the results
-  <<Writing 1 skew faces to set skewFaces
+    Face pyramids OK.
+    Max skewness = 1.93429 OK.
     Coupled point location match (average 0) OK.
 
-Failed 2 mesh checks.
+Mesh OK.
 
 Time = 3
 
 Mesh stats
-    points:           2266705
-    faces:            6471050
-    internal faces:   6385304
-    cells:            2103877
-    faces per cell:   6.11079
+    points:           8365011
+    faces:            24251290
+    internal faces:   24017091
+    cells:            7946650
+    faces per cell:   6.07405
     boundary patches: 4
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     1955345
-    prisms:        30186
+    hexahedra:     7578111
+    prisms:        81989
     wedges:        0
-    pyramids:      240
-    tet wedges:    92
-    tetrahedra:    97
-    polyhedra:     117917
+    pyramids:      295
+    tet wedges:    175
+    tetrahedra:    122
+    polyhedra:     285958
     Breakdown of polyhedra by number of faces:
         faces   number of cells
-            4   1156
-            5   1752
-            6   18152
-            7   34378
-            8   8980
-            9   35594
-           10   364
-           11   75
-           12   16715
-           13   1
-           14   38
-           15   712
+            4   3056
+            5   4070
+            6   45463
+            7   72524
+            8   20704
+            9   91920
+           10   653
+           11   261
+           12   45924
+           14   65
+           15   1316
+           18   2
 
 Checking topology...
     Boundary definition OK.
@@ -205,32 +203,31 @@ Checking topology...
 
 Checking patch topology for multiply connected surfaces...
                    Patch    Faces   Points                  Surface topology
-                   inlet      119      125  ok (non-closed singly connected)
-                  outlet      119      125  ok (non-closed singly connected)
-                   walls     1338     1356  ok (non-closed singly connected)
-                  rocket    84170    86988      ok (closed singly connected)
+                   inlet      310      326  ok (non-closed singly connected)
+                  outlet      304      321  ok (non-closed singly connected)
+                   walls     3985     4025  ok (non-closed singly connected)
+                  rocket   229600   235772      ok (closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-3 -2.99802 -3.00156) (13 2.99708 2.99239)
+    Overall domain bounding box (-3 -2.994 -3.00006) (13 2.9941 2.99233)
     Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
     Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (2.4332e-17 1.63376e-16 -3.509e-16) OK.
- ***High aspect ratio cells found, Max aspect ratio: 7.79833e+96, number of cells 16
-  <<Writing 16 cells with high aspect ratio to set highAspectRatioCells
-    Minimum face area = 4.09045e-10. Maximum face area = 0.410611.  Face area magnitudes OK.
- ***Zero or negative cell volume detected.  Minimum negative volume: -4.51671e-10, Number of negative volume cells: 16
-  <<Writing 16 zero volume cells to set zeroVolumeCells
-    Mesh non-orthogonality Max: 138.564 average: 8.07726
-   *Number of severely non-orthogonal (> 70 degrees) faces: 849.
- ***Number of non-orthogonality errors: 29.
-  <<Writing 878 non-orthogonal faces to set nonOrthoFaces
- ***Error in face pyramids: 376 faces are incorrectly oriented.
-  <<Writing 362 faces with incorrect orientation to set wrongOrientedFaces
- ***Max skewness = 267.556, 257 highly skew faces detected which may impair the quality of the results
-  <<Writing 257 skew faces to set skewFaces
+    Boundary openness (-4.39462e-18 3.21621e-16 2.16768e-16) OK.
+    Max cell openness = 1.58055e-14 OK.
+    Max aspect ratio = 319.297 OK.
+    Minimum face area = 1.42786e-09. Maximum face area = 0.130744.  Face area magnitudes OK.
+    Min volume = 2.0907e-12. Max volume = 0.0322742.  Total volume = 450.127.  Cell volumes OK.
+    Mesh non-orthogonality Max: 99.3384 average: 6.23444
+   *Number of severely non-orthogonal (> 70 degrees) faces: 2630.
+ ***Number of non-orthogonality errors: 26.
+  <<Writing 2656 non-orthogonal faces to set nonOrthoFaces
+ ***Error in face pyramids: 175 faces are incorrectly oriented.
+  <<Writing 168 faces with incorrect orientation to set wrongOrientedFaces
+ ***Max skewness = 46.9528, 12 highly skew faces detected which may impair the quality of the results
+  <<Writing 12 skew faces to set skewFaces
     Coupled point location match (average 0) OK.
 
-Failed 5 mesh checks.
+Failed 3 mesh checks.
 
 End
 
