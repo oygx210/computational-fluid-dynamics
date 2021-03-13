@@ -28,52 +28,52 @@ geometry
     }
 
     
-wake_coarse
-    {
-    type		    searchableCylinder;
-    point1          (-1.4 0 0);
-    point2          (8 0 0);
-    radius          0.4;
-    }
-
 ogive
     {
     type		    searchableCylinder;
-    point1          (-1.1 0 0);
-    point2          (-0.55 0 0);
-    radius          0.15;
+    point1          (-0.15 0 0);
+    point2          (0.4 0 0);
+    radius          0.2;
     }
 
 winglet
     {
     type		    searchableCylinder;
-    point1          (0.85 0 0);
-    point2          (1.05 0 0);
-    radius          0.15;
+    point1          (2.1 0 0);
+    point2          (2.55 0 0);
+    radius          0.2;
     }
 
 wake_near_1
     {
     type		    searchableCylinder;
-    point1          (1.0 0 0);
-    point2          (1.2 0 0);
-    radius          0.075;
+    point1          (2.45 0 0);
+    point2          (2.8 0 0);
+    radius          0.1;
     }
 
 wake_near_2
     {
     type		    searchableCylinder;
-    point1          (0.95 0 0);
-    point2          (1.5 0 0);
-    radius          0.1;
+    point1          (2.45 0 0);
+    point2          (3.1 0 0);
+    radius          0.15;
     }
 
 wake_near_3
     {
     type		    searchableCylinder;
-    point1          (0.8 0 0);
-    point2          (2.5 0 0);
-    radius          0.15;
+    point1          (2.45 0 0);
+    point2          (3.6 0 0);
+    radius          0.2;
+    }
+
+wake_coarse
+    {
+    type		    searchableCylinder;
+    point1          (2.45 0 0);
+    point2          (12.0 0 0);
+    radius          0.5;
     }
 
 };
@@ -99,7 +99,7 @@ castellatedMeshControls
     {
         rocket
         {
-            level (5 7);
+            level (7 7);
             patchInfo
             {
             type wall;
@@ -113,12 +113,6 @@ castellatedMeshControls
     {
 
 	    
-wake_coarse
-	    {
-		    mode inside;
-		    levels ((2 3));
-	    }
-
 ogive
 	    {
 		    mode inside;
@@ -147,6 +141,12 @@ wake_near_3
 	    {
 		    mode inside;
 		    levels ((4 5));
+	    }
+
+wake_coarse
+	    {
+		    mode inside;
+		    levels ((2 3));
 	    }
 
     }
@@ -178,8 +178,8 @@ addLayersControls
         }
     }
 
-	firstLayerThickness    2e-05;
-thickness    0.0015;
+	firstLayerThickness    1e-05;
+thickness    0.0025;
 
 
     minThickness 1e-10;

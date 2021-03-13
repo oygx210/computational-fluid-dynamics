@@ -20,4 +20,3 @@ FoamFile
 surfaceFile "geo/geometry.fms";
 
 maxCellSize 0.3;
-
