@@ -28,7 +28,23 @@ geometry
     }
 
     
-ogive
+region
+    {
+    type		    searchableCylinder;
+    point1          (-0.2 0 0);
+    point2          (2.5 0 0);
+    radius          0.3;
+    }
+
+ogive_1
+    {
+    type		    searchableCylinder;
+    point1          (-0.02 0 0);
+    point2          (0.3 0 0);
+    radius          0.09;
+    }
+
+ogive_2
     {
     type		    searchableCylinder;
     point1          (-0.15 0 0);
@@ -36,12 +52,20 @@ ogive
     radius          0.2;
     }
 
-winglet
+winglet_1
+    {
+    type		    searchableCylinder;
+    point1          (2.15 0 0);
+    point2          (2.5 0 0);
+    radius          0.2;
+    }
+
+winglet_2
     {
     type		    searchableCylinder;
     point1          (2.1 0 0);
     point2          (2.55 0 0);
-    radius          0.2;
+    radius          0.25;
     }
 
 wake_near_1
@@ -99,7 +123,7 @@ castellatedMeshControls
     {
         rocket
         {
-            level (8 8);
+            level (7 8);
             patchInfo
             {
             type wall;
@@ -113,13 +137,31 @@ castellatedMeshControls
     {
 
 	    
-ogive
+region
 	    {
 		    mode inside;
-		    levels ((4 5));
+		    levels ((2 4));
 	    }
 
-winglet
+ogive_1
+	    {
+		    mode inside;
+		    levels ((6 8));
+	    }
+
+ogive_2
+	    {
+		    mode inside;
+		    levels ((5 6));
+	    }
+
+winglet_1
+	    {
+		    mode inside;
+		    levels ((7 8));
+	    }
+
+winglet_2
 	    {
 		    mode inside;
 		    levels ((6 7));
@@ -128,7 +170,7 @@ winglet
 wake_near_1
 	    {
 		    mode inside;
-		    levels ((6 7));
+		    levels ((7 8));
 	    }
 
 wake_near_2

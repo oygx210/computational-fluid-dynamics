@@ -45,7 +45,7 @@ cfmeshConfiguration.refinementZones = [
 #-------------------------------------------------SNAPPY HEX MESH CONFIGURATION-----------------------------------------------------------------------------------------------------
 snappyConfiguration = snappy.snappyConfiguration()
 snappyConfiguration.featureExtractLevel = 8  #refinement precision for feature extraction
-snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(8,8) #rocket feature refinement level, specify min and max level
+snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(7,8) #rocket feature refinement level, specify min and max level
 snappyConfiguration.boundaryLayers = 10  #define number of boundary layers
 
 snappyConfiguration.boundaryControl = snappy.boundaryControl() #add a boundary control
@@ -53,18 +53,23 @@ snappyConfiguration.boundaryControl.setFirstLayerThickness(1.0e-5)
 snappyConfiguration.boundaryControl.setTotalThickness(2.5e-3)
 
 snappyConfiguration.refinementZones = [
-	snappy.snappyRefinement("ogive",        snappy.refinementLevel(4,5), point(-0.15, 0, 0), point(0.40, 0, 0), 0.20),
+	snappy.snappyRefinement("region",       snappy.refinementLevel(2,4), point(-0.20, 0, 0), point(2.50, 0, 0), 0.3),
+
+	snappy.snappyRefinement("ogive_1",      snappy.refinementLevel(6,8), point(-0.02, 0, 0), point(0.30, 0, 0), 0.09),
+	snappy.snappyRefinement("ogive_2",      snappy.refinementLevel(5,6), point(-0.15, 0, 0), point(0.40, 0, 0), 0.20),
 
 #	snappy.snappyRefinement("aerobreaks_1", snappy.refinementLevel(6,7), point( 1.65, 0, 0), point(2.45, 0, 0), 0.15),
 #	snappy.snappyRefinement("aerobreaks_2", snappy.refinementLevel(5,6), point( 1.55, 0, 0), point(2.45, 0, 0), 0.30),
 
-	snappy.snappyRefinement("winglet",      snappy.refinementLevel(6,7), point( 2.10, 0, 0), point(2.55, 0, 0), 0.20),
+	snappy.snappyRefinement("winglet_1",    snappy.refinementLevel(7,8), point( 2.15, 0, 0), point(2.50, 0, 0), 0.20),
+	snappy.snappyRefinement("winglet_2",    snappy.refinementLevel(6,7), point( 2.10, 0, 0), point(2.55, 0, 0), 0.25),
 
-	snappy.snappyRefinement("wake_near_1",  snappy.refinementLevel(6,7), point( 2.45, 0, 0), point(2.80, 0, 0), 0.10),
+	snappy.snappyRefinement("wake_near_1",  snappy.refinementLevel(7,8), point( 2.45, 0, 0), point(2.80, 0, 0), 0.10),
 	snappy.snappyRefinement("wake_near_2",  snappy.refinementLevel(5,6), point( 2.45, 0, 0), point(3.10, 0, 0), 0.15),
 	snappy.snappyRefinement("wake_near_3",  snappy.refinementLevel(4,5), point( 2.45, 0, 0), point(3.60, 0, 0), 0.20),
 
 	snappy.snappyRefinement("wake_coarse",  snappy.refinementLevel(2,3), point( 2.45, 0, 0), point(12.0, 0, 0), 0.50)
+
 ]
 # -------------------------------------------------------------------------------
 
