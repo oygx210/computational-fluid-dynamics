@@ -41,5 +41,17 @@ def setupSnappyhexmesh(workingPath, config):
 	with open(meshdictPath, 'w') as f:
 		f.write(configString)
 
+
+	##########################################################################################
+	cfmeshTemplatePath = os.path.join(workingPath,settings.cfmeshPathTemplate)
+	with open(cfmeshTemplatePath,'r') as f:
+		dumpStr = f.read()
+
+	dumpStr = dumpStr.replace("$cellSize$", str(config.domainCellSize))
+
+	cfmeshDumpPath = os.path.join(workingPath, settings.cfmeshDictFile)
+	with open(cfmeshDumpPath, 'w') as f:
+		f.write(dumpStr)
+
 	return True
 	
