@@ -45,7 +45,7 @@ cfmeshConfiguration.refinementZones = [
 #-------------------------------------------------SNAPPY HEX MESH CONFIGURATION-----------------------------------------------------------------------------------------------------
 snappyConfiguration = snappy.snappyConfiguration()
 snappyConfiguration.featureExtractLevel = 8  #refinement precision for feature extraction
-snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(7,7) #rocket feature refinement level, specify min and max level
+snappyConfiguration.rocketRefineLevel = snappy.refinementLevel(8,8) #rocket feature refinement level, specify min and max level
 snappyConfiguration.boundaryLayers = 10  #define number of boundary layers
 
 snappyConfiguration.boundaryControl = snappy.boundaryControl() #add a boundary control

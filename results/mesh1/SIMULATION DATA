@@ -1,0 +1,112 @@
+----------------------------------------------------
+INITIAL CONDITIONS
+----------------------------------------------------
+SIMULATION SETUP
+
+MACH:     0.3000 [-]
+ALTITUDE:     0.0000 [m]
+ANGLE OF ATTACK:     0.0000 [°]
+ANGLE OF SIDESLIP:     0.0000 [°]
+U_INF =   102.0882 [m/s]
+----------------------------------------------------
+ATMOSPHERIC DATA
+
+TEMPERATURE:   288.1500 [K]
+PRESSURE: 101325.0000 [m]
+DENSITY:     1.2250 [kg/m^3]
+SPEED OF SOUND:   340.2940 [m/s]
+----------------------------------------------------
+TURBULENCE PROPERTIES
+
+Reynolds number: 14150558.3354 [-]
+turbulent length scale:     0.1747 [m]
+turbulent intensity:     0.0204 [%]
+k:     6.5251 [J]
+w:    26.7033 [J]
+epsilon:    15.6818 [J]
+nut:     0.4461 [m^2/s]
+nuTilda:     0.0892 [m^2/s]
+----------------------------------------------------
+AERODYNAMIC DATA
+computed using the last iteration of the solver
+----------------------------------------------------
+FORCES 
+
+FX:
+    total:    77.6643 [N]
+    viscous:    40.1934 [N]
+    pressure:    37.4709 [N]
+FY:
+    total:    -0.9365 [N]
+    viscous:    -0.9438 [N]
+    pressure:     0.0073 [N]
+FZ:
+    total:    -1.1891 [N]
+    viscous:     0.0147 [N]
+    pressure:    -1.2038 [N]
+
+FORCES IN THE WIND FRAME
+
+D:    77.6643 [N]
+L:    -0.9365 [N]
+S:    -1.1891 [N]
+
+COEFFICIENTS (adimensionalized by the frontal surface)
+
+CD:     0.6885 [-]
+CL:    -0.0083 [-]
+CS:    -0.0105 [-]
+----------------------------------------------------
+TORQUES CONVENTION
+
+Rolling Moment:
+    A positive rolling moment tends to rotate 
+    the rocket in the postive direction 
+    identified by the first body axis.
+    This axis goes from the end to the tip.
+
+Yawing Moment:
+    A positive yawing moment tends to rotate 
+    the tip of the rocket towards the
+    observer. This is equivalent to a positive
+    rotation along the lift axis.
+
+Pitching Moment:
+    A positive pitching moment will increase the
+    angle of attack.
+
+All torques are adimensionalized by the rocket length.
+----------------------------------------------------
+TORQUES in (0,0,0)
+
+Rolling Moment:
+    total:    -0.0417 [Nm]
+    viscous:     0.0000 [Nm]
+    pressure:    -0.0417 [Nm]
+Yawing Moment:
+    total:     2.8309 [Nm]
+    viscous:    -0.0391 [Nm]
+    pressure:     2.8701 [Nm]
+Pitching Moment:
+    total:     2.3081 [Nm]
+    viscous:     0.0130 [Nm]
+    pressure:     2.2952 [Nm]
+----------------------------------------------------
+TORQUES AT THE ROCKET TIP 
+
+Yawing Moment:
+    value:     2.8309 [Nm]
+    coefficient:     0.0101 [-]
+Pitching Moment:
+    value:     2.3081 [Nm]
+    coefficient:     0.0082 [-]
+----------------------------------------------------
+TORQUES AT THE ROCKET C.G. 
+
+Yawing Moment:
+    value:     1.4040 [Nm]
+    coefficient:     0.0050 [-]
+Pitching Moment:
+    value:     3.4319 [Nm]
+    coefficient:     0.0122 [-]
+----------------------------------------------------

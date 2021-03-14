@@ -99,7 +99,7 @@ castellatedMeshControls
     {
         rocket
         {
-            level (7 7);
+            level (8 8);
             patchInfo
             {
             type wall;

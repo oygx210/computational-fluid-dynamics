@@ -21,7 +21,7 @@ solvers
     {
         solver          PCG;
         preconditioner  DIC;
-        tolerance       1e-6;
+        tolerance       1e-10;
         relTol          0.01;
     }
 
@@ -29,7 +29,7 @@ solvers
     {
         solver          PBiCGStab;
         preconditioner  DILU;
-        tolerance       1e-6;
+        tolerance       1e-8;
         relTol          0.1;
     }
 }
@@ -43,7 +43,7 @@ SIMPLE
         "(k|omega|e)"   1e-4;
     }
 
-    nNonOrthogonalCorrectors 0;
+    nNonOrthogonalCorrectors 1;
     pMinFactor      0.1;
     pMaxFactor      2;
 }
