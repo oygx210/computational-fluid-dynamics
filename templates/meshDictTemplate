@@ -19,8 +19,4 @@ FoamFile
 
 surfaceFile "geo/geometry.fms";
 
-<<<<<<< HEAD
-maxCellSize 0.6;
-=======
-maxCellSize 0.35;
->>>>>>> 70a769c7a2399557e96145ebd1126a89e8727892
+maxCellSize $cellSize$;

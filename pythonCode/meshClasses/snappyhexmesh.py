@@ -62,6 +62,7 @@ class snappyConfiguration:
 		self.boundaryLayers = None
 		self.boundaryControl = None
 		self.refinementZones = None
+		self.domainCellSize = None
 
 
 

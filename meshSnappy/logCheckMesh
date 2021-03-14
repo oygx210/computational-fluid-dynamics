@@ -5,14 +5,20 @@
     \\  /    A nd           | Version:  7
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
-Build  : 7
+Build  : 7-3bcbaf946ae9
 Exec   : checkMesh
 Date   : Mar 14 2021
+<<<<<<< HEAD
 Time   : 12:37:11
 Host   : "lucamignozzi-ROG-Zephyrus-G14-GA401IV-GA401IV"
 PID    : 9821
+=======
+Time   : 12:27:19
+Host   : "omarkahol"
+PID    : 7544
+>>>>>>> 70a769c7a2399557e96145ebd1126a89e8727892
 I/O    : uncollated
-Case   : /home/lucamignozzi/Desktop/Skyward/computational-fluid-dynamics/meshSnappy
+Case   : /home/omarkahol/SKYWARD/computational_fluid_dynamics/meshSnappy
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -21,6 +27,7 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+<<<<<<< HEAD
 Create polyMesh for time = 1
 
 Time = 1
@@ -226,4 +233,11 @@ Checking geometry...
 Failed 5 mesh checks.
 
 End
+=======
+--> FOAM Warning : 
+    From function static Foam::instantList Foam::timeSelector::select0(Foam::Time&, const Foam::argList&)
+    in file db/Time/timeSelector.C at line 269
+    No time specified or available, selecting 'constant'
+Create polyMesh for time = constant
+>>>>>>> 70a769c7a2399557e96145ebd1126a89e8727892
 

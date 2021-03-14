@@ -1,0 +1,9 @@
+flowVelocity        (%ux% %uy% %uz%);
+pressure            %pressure%;
+densityRef          %densityRef%;
+temperature         %temperature%;
+nut                 %nut%;
+k                   %k%;
+w                   %w%;
+Uinf                %Uinf%;
+nuTilda             %nuTilda%;
